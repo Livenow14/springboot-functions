@@ -10,23 +10,22 @@ mysql> ERROR 1366 (HY000) : incorrect string value : ''\xED\x95\x9C\xEC\x9A\xB0.
 
 org.springframework.jdbc.UncategorizedSQLException: 
 
-### Error updating database.  Cause: java.sql.SQLException: Incorrect string value: '\xED\x95\x9C\xEC\x9A\xB0...' for column 'itemName' at row 1
+Error updating database.  Cause: java.sql.SQLException: Incorrect string value: '\xED\x95\x9C\xEC\x9A\xB0...' for column 'itemName' at row 1
 
-### The error may involve com.jworks.grevu.mapper.ItemMapper.addItem-Inline
+The error may involve com.jworks.grevu.mapper.ItemMapper.addItem-Inline
 
-### The error occurred while setting parameters
+The error occurred while setting parameters
 
-### SQL: INSERT INTO item (itemName, itemPrice, itemDesc, shopId) VALUES (?,?,?,?)
+SQL: INSERT INTO item (itemName, itemPrice, itemDesc, shopId) VALUES (?,?,?,?)
 
-### Cause: java.sql.SQLException: Incorrect string value: '\xED\x95\x9C\xEC\x9A\xB0...' for column 'itemName' at row 1
-
+Cause: java.sql.SQLException: Incorrect string value: '\xED\x95\x9C\xEC\x9A\xB0...' for column 'itemName' at row 1
 ; uncategorized SQLException for SQL []; SQL state [HY000]; error code [1366]; Incorrect string value: '\xED\x95\x9C\xEC\x9A\xB0...' for column 'itemName' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xED\x95\x9C\xEC\x9A\xB0...' for column 'itemName' at row 1
 
 ## 2. 수정방법
 
 1) database, table character set 설정
 
-mysql> SHOW CREATE TABLE table_name;
+mysql> SHOW CREATE TABLE table_name;  
 mysql> ALTER TABLE table_name CONVERT TO character SET utf8; 
 
 
